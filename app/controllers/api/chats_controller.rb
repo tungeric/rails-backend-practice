@@ -15,6 +15,6 @@ class Api::ChatsController < ApplicationController
   end
 
   def chat_params
-    params.require(:chat).permit(:username, :text, :timeout)
+    params.require(:chat).permit(:id, :username, :text, :timeout)
   end
 end

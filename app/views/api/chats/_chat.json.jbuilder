@@ -1,1 +1,1 @@
-json.extract! chat, :username, :text, :timeout
+json.extract! chat, :id, :username, :text, :timeout
