@@ -11,7 +11,6 @@ class ChatsController < ApplicationController
       render :show
     else
       @chats = Chat.get_unexpired(query)
-      debugger
       render :index
     end
   end
