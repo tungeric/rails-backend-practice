@@ -38,7 +38,7 @@ Welcome to an api for an ephemeral chat service! This service should be able to 
 
 
 ## How to use
-Once the repo is cloned, run `rails s` to run the server. You can then run the program against tests.
+Once the repo is cloned, run `rails s` to run the server. You can then run the program against tests. Note that this application uses PostgreSQL, so make sure that is running as well.
 
 ## Decision making process
 
