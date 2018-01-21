@@ -11,8 +11,8 @@
 #
 
 class Chat < ApplicationRecord
-  validates :username, :text, presence: true
-  
+  validates :username, :text, :timeout, presence: true
+
   def self.get_unexpired(username)
     now = Time.now
     chats = from('chats').where("lower(username) @@ :username", username: username.downcase)
@@ -20,9 +20,7 @@ class Chat < ApplicationRecord
   end
 
   def expiration_date
-    expired_time = self.created_at.to_i + self.timeout
-    local_expired_time = Time.at(expired_time)
-    # display_time = local_expired_time.strftime("%Y-%m-%d %H:%M:%S")
+    expired_time = Time.at(self.created_at.to_i + self.timeout)
   end
 
   def display_expiration_date
