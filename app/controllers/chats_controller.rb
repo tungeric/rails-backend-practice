@@ -11,6 +11,10 @@ class ChatsController < ApplicationController
       render :show
     else
       @chats = Chat.get_unexpired(query)
+      @chats.each do |chat|
+        new_timeout = Time.now.to_i - chat.created_at.to_i
+        chat.update_attributes(timeout: new_timeout)
+      end
       render :index
     end
   end
