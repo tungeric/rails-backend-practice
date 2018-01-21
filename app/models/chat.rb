@@ -11,6 +11,8 @@
 #
 
 class Chat < ApplicationRecord
+  validates :username, :text, presence: true
+  
   def self.get_unexpired(username)
     now = Time.now
     chats = from('chats').where("lower(username) @@ :username", username: username.downcase)
