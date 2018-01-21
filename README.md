@@ -1,5 +1,5 @@
 # README
-Welcome to an api for an ephemeral chat service! This service should be able to accomodate 3 endpoints:
+Welcome to an api for an ephemeral chat service! This is built using Ruby on Rails, largely because I have the most experience with this framework, but also because Ruby on Rails is designed for quick development due to its tendency for convention. This service should be able to accomodate 3 endpoints:
 
 1. POST `/chat`
   * Creates a new chat with username, text body, and a timeout which is the amount of time in seconds before the chat expires
